@@ -45,7 +45,7 @@ def contar_palavras(texto):
 
 print("Quantidade de palavras do texto original: " + str(contar_palavras(text)))
 inputs = tokenizer.encode(text, max_length=1024, truncation=True, return_tensors='pt')
-summary_ids = model.generate(inputs, max_length=512, min_length=100, num_beams=5, no_repeat_ngram_size=3, early_stopping=True)
+summary_ids = model.generate(inputs, max_length=512, min_length=150, num_beams=5, no_repeat_ngram_size=3, early_stopping=True)
 summary = tokenizer.decode(summary_ids[0])
 summary = remover_tags(summary)
 print("Quantidade de palavrs do resumo: " + str(contar_palavras(summary)))
